@@ -1,0 +1,17 @@
+{
+  "name": "ipv4-header-checksum",
+  "version": "0.1.0",
+  "description": "Computes and validates the IP header checksum over a raw datagram buffer.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {}
+}
