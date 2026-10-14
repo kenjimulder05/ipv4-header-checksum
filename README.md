@@ -27,3 +27,10 @@ This library exists to provide a single, well-tested implementation of the IPv4 
 ## Edge cases
 
 The implementation honours the Internet Header Length (IHL) field, so IP options are included in the sum when present. It does **not** enforce IHL's maximum value of 15; a buffer with IHL set beyond what the protocol allows will still be summed as long as the buffer is long enough. The checksum field (bytes 10–11) is read as zero during computation and is never mutated.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
